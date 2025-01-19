@@ -1,0 +1,398 @@
+[
+  {
+    "groupName": "IO", "content":
+    [
+      {
+        "name": "输入",
+        "param": {},
+        "className": "DefaultOp",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "输出",
+        "param": {},
+        "className": "DefaultOp",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "convert",
+    "content": [
+      {
+        "name": "BGR2GRAY",
+        "param": {},
+        "className": "BGR2GRAY",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "toFloat32",
+        "param": {},
+        "className": "ToFloat32",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "归一化",
+        "param": {},
+        "className": "Normalize",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "反归一化",
+        "param": {},
+        "className": "Denormalize",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "gradients",
+    "content": [
+      {
+        "name": "Sobel",
+        "param": {
+          "dx": {
+            "val": 1,
+            "step": 1,
+            "min": 0,
+            "max": 1
+          },
+          "dy": {
+            "val": 1,
+            "step": 1,
+            "min": 0,
+            "max": 1
+          },
+          "ksize": {
+            "val": 3,
+            "step": 2,
+            "min": 1,
+            "max": 21
+          }
+        },
+        "className": "Sobel",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "morphology",
+    "content": [
+      {
+        "name": "膨胀",
+        "param": {
+          "ksize_w": {
+            "val": 3,
+            "step": 1,
+            "min": 1,
+            "max": 100
+          },
+          "ksize_h": {
+            "val": 3,
+            "step": 1,
+            "min": 1,
+            "max": 100
+          },
+          "iterations": {
+            "val": 1,
+            "step": 1,
+            "min": 1,
+            "max": 100
+          }
+        },
+        "className": "Dilate",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "mask",
+    "content": [
+      {
+        "name": "isEq",
+        "param": {},
+        "className": "IsEq",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  { "groupName": "filter", "content":
+    [
+      {
+        "name": "均值滤波",
+        "param": {
+          "ksize_w": {
+            "val": 3,
+            "step": 1,
+            "min": 1,
+            "max": 99
+          },
+          "ksize_h": {
+            "val": 3,
+            "step": 1,
+            "min": 1,
+            "max": 99
+          }
+        },
+        "className": "Blur",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "高斯滤波",
+        "param": {
+          "ksize_w": {
+            "val": 3,
+            "step": 2,
+            "min": 1,
+            "max": 99
+          },
+          "ksize_h": {
+            "val": 3,
+            "step": 2,
+            "min": 1,
+            "max": 99
+          },
+          "sigmaX": {
+            "val": 0.5,
+            "step": 0.1,
+            "min": 0,
+            "max": 20
+          },
+          "sigmaY": {
+            "val": 0.5,
+            "step": 0.1,
+            "min": 0,
+            "max": 20
+          }
+        },
+        "className": "GaussianBlur",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "中值滤波",
+        "param": {
+          "ksize": {
+            "val": 3,
+            "step": 2,
+            "min": 1,
+            "max": 99
+          }
+        },
+        "className": "MedianBlur",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ] },
+  { "groupName": "pointOp", "content":
+    [
+      {
+        "name": "Add",
+        "param": {},
+        "className": "Add",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "multiply",
+        "param": {
+          "scale": {
+            "val": 1.0,
+            "step": 0.01,
+            "min": 0.01,
+            "max": 3
+          }
+        },
+        "className": "Multiply",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "平方",
+        "param": {},
+        "className": "Square",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "数乘（图像）",
+        "param": {
+          "scale": {
+            "val": 0.01,
+            "step": 0.001,
+            "min": -10,
+            "max": 10
+          }
+        },
+        "className": "Times",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "数乘（数字）",
+        "param": {
+          "scale": {
+            "val": 0.01,
+            "step": 0.001,
+            "min": -10,
+            "max": 10
+          }
+        },
+        "className": "Scale",
+        "mapping": {
+          "input": "value",
+          "output": "value"
+        }
+      },
+      {
+        "name": "max",
+        "param": {},
+        "className": "Max",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "value"
+        }
+      },
+      {
+        "name": "阈值(cv.THRESH_TOZERO)",
+        "param": {},
+        "className": "Threshold",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      },
+      {
+        "name": "伽马校正",
+        "param": {
+          "gamma": {
+            "val": 2.2,
+            "step": 0.05,
+            "min": 0.05,
+            "max": 3
+          }
+        },
+        "className": "GammaCorrection",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "index",
+    "content": [
+      {
+        "name": "nonZero",
+        "param": {},
+        "className": "NonZero",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "point"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "logic",
+    "content": [
+      {
+        "name": "与",
+        "param": {},
+        "className": "BitwiseAnd",
+        "mapping": {
+          "input": "defaultImg",
+          "output": "defaultImg"
+        }
+      }
+    ]
+  },
+  {
+    "groupName": "draw",
+    "content": [
+      {
+        "name": "画圈",
+        "param": {
+          "radius": {
+            "val": 10,
+            "step": 1,
+            "min": 1,
+            "max": 200
+          },
+          "colorB": {
+            "val": 0,
+            "step": 1,
+            "min": 0,
+            "max": 255
+          },
+          "colorG": {
+            "val": 0,
+            "step": 1,
+            "min": 0,
+            "max": 255
+          },
+          "colorR": {
+            "val": 255,
+            "step": 1,
+            "min": 0,
+            "max": 255
+          },
+          "thickness": {
+            "val": 3,
+            "step": 1,
+            "min": 1,
+            "max": 30
+          }
+        },
+          "className": "DrawCircle",
+          "mapping": {
+            "input": "defaultImg",
+            "output": "defaultImg"
+          }
+      }
+    ]
+  }
+]

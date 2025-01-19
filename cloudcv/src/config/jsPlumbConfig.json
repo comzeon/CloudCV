@@ -1,0 +1,20 @@
+{
+  "Connector": ["Bezier", {
+    "curviness": 60
+  }],
+  "Endpoint": "Dot",
+  "EndpointStyle": {
+    "radius": 9,
+    "opacity": 0.9,
+    "fill": "black"
+  },
+  "Anchors": ["TopCenter", "BottomCenter", "LeftCenter", "RightCenter"],
+  "ConnectionOverlays": [
+    ["Arrow", { "location": 0.5, "width": 10, "length": 10 }]
+  ],
+  "HoverPaintStyle": {
+    "stroke": "#c83b40",
+    "strokeWidth":7
+  },
+  "ConnectionsDetachable": false
+}
