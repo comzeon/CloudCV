@@ -2,7 +2,7 @@
   <Canvas :v-if=isShowing :left="canvasParam.get('left')" :right="canvasParam.get('right')"
           @getLeftSliderVal="handleLeftSliderVal" @getRightSliderVal="handleRightSliderVal"></Canvas>
   <Workflow :submit="submitWorkflow" @bind-left="updateLeft" @bind-right="updateRight"></Workflow>
-  <img ref="image" src="../assets/test_img/test.png" v-show=false @load="loadImage" width="500" height="500"></img>
+  <img ref="image" src="../assets/test_img/img.png" v-show=false @load="loadImage" width="500" height="500"></img>
 </template>
 
 <script setup>
